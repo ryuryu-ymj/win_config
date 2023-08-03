@@ -1,0 +1,73 @@
+let mapleader=" "
+" Plug-in
+set surround
+set commentary
+set argtextobj
+set highlightedyank
+set ideajoin
+
+" 行数を相対表示
+set relativenumber
+" スマートケース
+set ignorecase
+set smartcase
+" 検索ハイライト
+set incsearch
+set hls
+" Escの2回押しで検索ハイライト消去
+nnoremap <Esc><Esc> :nohlsearch<CR>
+
+" 消去したときにレジスタを汚さない
+nnoremap d "_d
+vnoremap d "_d
+nnoremap dd "_dd
+nnoremap D "_D
+nnoremap x "_x
+vnoremap x "_x
+nnoremap c "_c
+vnoremap c "_c
+nnoremap cc "_cc
+nnoremap C "_C
+" カットにはsを用いる
+nnoremap s d
+nnoremap ss dd
+vnoremap s d
+nnoremap S D
+" ^, $の代わりにH, Lで行頭行末移動
+noremap H ^
+noremap L $
+" insertモードでemacs風のキーバインド
+inoremap <C-a> <C-o>^
+inoremap <C-e> <End>
+inoremap <C-d> <Delete>
+inoremap <C-u> :action EditorDeleteToLineStart<CR>
+"inoremap <C-k> <Esc>lDa
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+imap <C-b> <C-o>h
+imap <C-f> <C-o>l
+inoremap <C-j> <Enter>
+"cnoremap <C-p> <Up>
+"cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
+"nnoremap l :action EditorRight<CR>
+"nnoremap h :action EditorLeft<CR>
+
+nnoremap <leader><leader> :action GotoFile<CR>
+nnoremap <leader>l :action ReformatCode<CR>
+nnoremap <leader>w :action SaveAll<CR>
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>ac :action ShowIntentionActions<CR>
+nnoremap gr :action ShowUsages<CR>
+nnoremap g[ :action GotoPreviousError<CR>
+nnoremap g] :action GotoNextError<CR>
+nnoremap <C-s> v:action EditorSelectWord<CR>
+vnoremap <C-s> :action EditorSelectWord<CR>
+vnoremap a :action SurroundWith<CR>
+
+" タブ間の移動
+nnoremap <Left> :action PreviousTab<CR>
+nnoremap <Right> :action NextTab<CR>

@@ -158,6 +158,10 @@ return
 ;LCtrl::Send,{Esc}
 ;vkF0::Send,{Esc}
 
+^escape::
+Send,{Esc}
+return
+
 *LCtrl::
 SetKeyDelay -1
 Send {Blind}{LCtrl DownR}
